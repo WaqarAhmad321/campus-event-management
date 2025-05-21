@@ -1,25 +1,24 @@
-
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage"; // Import Firebase Storage
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyCvqwo2htkkroCQXqs2KGxZ8q0mU9AvUWE",
+  authDomain: "fcitlive.firebaseapp.com",
+  projectId: "fcitlive",
+  storageBucket: "fcitlive.firebasestorage.app",
+  messagingSenderId: "926502398710",
+  appId: "1:926502398710:web:1ccd02a6c62b52e9ebdad7",
 };
 
 // Log the config to help with debugging environment variable issues
 console.log("Attempting to initialize Firebase with config:", firebaseConfig);
 if (!firebaseConfig.apiKey) {
-  console.warn("Firebase API Key is missing. Ensure NEXT_PUBLIC_FIREBASE_API_KEY is set in your environment.");
+  console.warn(
+    "Firebase API Key is missing. Ensure NEXT_PUBLIC_FIREBASE_API_KEY is set in your environment.",
+  );
 }
-
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
